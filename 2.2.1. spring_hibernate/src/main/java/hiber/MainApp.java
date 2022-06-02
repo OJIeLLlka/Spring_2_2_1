@@ -30,15 +30,14 @@ public class MainApp {
          System.out.println("Car = " + user.getCar());
       }
 
-      List<User> usersWithCar = userService.listUsersWithCar("AUDI" , 7);
-      for (User user : usersWithCar) {
+      User usersWithCar = userService.listUsersWithCar("AUDI" , 7);
          System.out.println("\nUsers with specific car:\n");
-         System.out.println("Id = "+user.getId());
-         System.out.println("First Name = "+user.getFirstName());
-         System.out.println("Last Name = "+user.getLastName());
-         System.out.println("Email = "+user.getEmail());
-         System.out.println("Car = " + user.getCar());
-      }
+         System.out.println("Id = "+usersWithCar.getId());
+         System.out.println("First Name = "+usersWithCar.getFirstName());
+         System.out.println("Last Name = "+usersWithCar.getLastName());
+         System.out.println("Email = "+usersWithCar.getEmail());
+         System.out.println("Car = " + usersWithCar.getCar());
+
       context.close();
    }
 }
