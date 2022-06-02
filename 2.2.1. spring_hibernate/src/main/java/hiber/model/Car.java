@@ -60,6 +60,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return model + " " + series;
+        return model + " series:" + series;
     }
 }
