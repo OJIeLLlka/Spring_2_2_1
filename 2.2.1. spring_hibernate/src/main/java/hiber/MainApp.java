@@ -1,7 +1,6 @@
 package hiber;
 
 import hiber.config.AppConfig;
-import hiber.dao.UserDaoImp;
 import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
