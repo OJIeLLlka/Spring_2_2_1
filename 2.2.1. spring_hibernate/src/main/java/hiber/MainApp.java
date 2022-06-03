@@ -1,6 +1,7 @@
 package hiber;
 
 import hiber.config.AppConfig;
+import hiber.dao.UserDaoImp;
 import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
@@ -11,10 +12,11 @@ import java.util.List;
 
 public class MainApp {
    public static void main(String[] args) throws SQLException {
-      AnnotationConfigApplicationContext context = 
+      AnnotationConfigApplicationContext context =
             new AnnotationConfigApplicationContext(AppConfig.class);
 
       UserService userService = context.getBean(UserService.class);
+
 
       userService.add(new User("User1", "Lastname1", "user1@mail.ru", new Car("BMW", 5)));
       userService.add(new User("User2", "Lastname2", "user2@mail.ru", new Car("AUDI", 7)));
@@ -30,7 +32,7 @@ public class MainApp {
          System.out.println("Car = " + user.getCar());
       }
 
-      User usersWithCar = userService.listUsersWithCar("AUDI" , 7);
+      User usersWithCar = userService.getUserByModelAndSeries("AUDI" , 7);
          System.out.println("\nUsers with specific car:\n");
          System.out.println("Id = "+usersWithCar.getId());
          System.out.println("First Name = "+usersWithCar.getFirstName());
